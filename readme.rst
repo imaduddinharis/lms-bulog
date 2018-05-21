@@ -13,8 +13,7 @@ Untuk tahap pengembangan aplikasi ini, developer dapat melihat dokumentasi api p
 **************************
 Specification & Requirement
 **************************
-Aplikasi ini menggunakan PHP Framework Codeigniter dengan library curl
-untuk menjalankan anda dapat mengaktifkan paket web server apache-mysql dengan syarat telah terinstal dan mengaktifkan library Curl pada pengaturan php.
+Aplikasi ini menggunakan PHP Framework Codeigniter dengan library curl, untuk menjalankannya anda dapat mengaktifkan paket web server apache-mysql dengan syarat telah terinstal dan mengaktifkan library Curl pada pengaturan php.
 
 `duds.hn <mailto:imaduddinhariss@gmail.com>`_
 
