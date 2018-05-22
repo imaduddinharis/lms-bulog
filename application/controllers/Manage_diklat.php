@@ -58,7 +58,7 @@ class Manage_diklat extends CI_Controller {
     public function detail($kodediklat)
 	{
         /*- manage data throw -*/
-        $data['diklatlist'] = json_decode($this->curl->simple_get($this->API.'diklat?kode_diklat='.$kodedilkat));
+        $data['diklatlist'] = json_decode($this->curl->simple_get($this->API.'diklat?kode_diklat='.$kodediklat));
         
         /*- define reference assets -*/
         $data['assets']=$this->assets;

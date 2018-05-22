@@ -35,13 +35,17 @@
                                     </div>
                                 </div>
                                 <!-- Page-header end -->
-                                
+                                    <div class="col-md-6 col-xl-3">
+                                        <a href="<?= base_url() ?>learning-management/manage-diklat/add-diklat">
+                                            <button class="btn btn-primary"><i class="icofont icofont-plus"></i>Add Diklat</button>
+                                        </a>
+                                    </div><br>
                                 <!-- Page-body start -->
                                 <div class="page-body">
                                     <!-- Hover table card start -->
                                     <div class="card">
                                         <div class="card-header">
-                                            <h5>Hover table</h5>
+                                            <h5>Data Diklat </h5>
                                             <span>use class <code>table-hover</code> inside table element</span>
                                             <div class="card-header-right">    <ul class="list-unstyled card-option">        <li><i class="icofont icofont-simple-left "></i></li>        <li><i class="icofont icofont-maximize full-card"></i></li>        <li><i class="icofont icofont-minus minimize-card"></i></li>        <li><i class="icofont icofont-refresh reload-card"></i></li>        <li><i class="icofont icofont-error close-card"></i></li>    </ul></div>
                                         </div>
@@ -64,17 +68,21 @@
                                                     <tbody>
                                                         <?php
                                                             $no=1;
-                                                            foreach ($diklatlist->result as $lp){
+                                                            foreach ($diklatlist->result as $dl){
                                                             echo "<tr>
                                                                     <th scope='row'>$no</th>
-                                                                    <td>$lp->kode_diklat</td>
-                                                                    <td>$lp->nama_diklat</td>
-                                                                    <td>$lp->kode_kompetensi</td>
-                                                                    <td>$lp->materi</td>
-                                                                    <td>$lp->master_plan</td>
-                                                                    <td>$lp->tujuan</td>
-                                                                    <td>$lp->updated_at</td>
-                                                                    <td><a href='".base_url()."learning-management/manage-learning-plan/detail/$lp->kode_diklat'><i class='fa fa-eye'></i></a></td>
+                                                                    <td>$dl->kode_diklat</td>
+                                                                    <td>$dl->nama_diklat</td>
+                                                                    <td>$dl->kode_kompetensi</td>
+                                                                    <td>$dl->materi</td>
+                                                                    <td>$dl->master_plan</td>
+                                                                    <td>$dl->tujuan</td>
+                                                                    <td>$dl->updated_at</td>
+                                                                    <td>
+                                                                    <a href='".base_url()."learning-management/manage-diklat/detail/$dl->kode_diklat'><i class='fa fa-eye'></i></a> &nbsp;
+                                                                    <a href='".base_url()."learning-management/manage-diklat/update/$dl->kode_diklat'><i class='fa fa-edit'></i></a> &nbsp;
+                                                                    <a href='".base_url()."learning-management/manage-diklat/delete/$dl->kode_diklat'><i class='fa fa-trash'></i></a>
+                                                                    </td>
                                                                   </tr>";
                                                                 $no++;
                                                             }
