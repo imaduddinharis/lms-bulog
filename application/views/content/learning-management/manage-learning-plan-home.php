@@ -78,7 +78,11 @@
                                                                     <td>$lp->tempat</td>
                                                                     <td>$lp->total_anggaran</td>
                                                                     <td>$lp->updated_at</td>
-                                                                    <td><a href='".base_url()."learning-management/manage-learning-plan/detail/$lp->kode_lp'><i class='fa fa-eye'></i></a></td>
+                                                                    <td>
+                                                                    <a href='".base_url()."learning-management/manage-learning-plan/detail/$lp->kode_lp'><i class='fa fa-eye'></i></a> &nbsp;
+                                                                    <a href='".base_url()."learning-management/manage-learning-plan/update/$lp->kode_lp'><i class='fa fa-edit'></i></a> &nbsp;
+                                                                    <a href='".base_url()."learning-management/manage-learning-plan/delete/$lp->kode_lp'><i class='fa fa-trash'></i></a>
+                                                                    </td>
                                                                   </tr>";
                                                                 $no++;
                                                             }

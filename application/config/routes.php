@@ -63,6 +63,7 @@ $route['learning-management/manage-learning-plan'] = 'manage_learning_plan';
 //$route['learning-management/manage-learning-plan/add-learning-plan'] = 'maintenance';
 $route['learning-management/manage-learning-plan/add-learning-plan'] = 'manage_learning_plan/add';
 $route['learning-management/manage-learning-plan/detail/(:any)'] = 'manage_learning_plan/detail/$1';
+$route['learning-management/manage-learning-plan/update/(:any)'] = 'manage_learning_plan/update/$1';
 $route['learning-management/manage-diklat'] = 'maintenance';
 //$route['learning-management/manage-diklat'] = 'manage_diklat';
 $route['learning-management/delivery-pelatihan'] = 'maintenance';
@@ -84,3 +85,13 @@ $route['content-management/evaluasi-pelatihan'] = 'maintenance';
 
 /* routes action */
 $route['add-learning-plan'] = 'manage_learning_plan/post';
+$route['update-learning-plan'] = 'manage_learning_plan/put';
+$route['learning-management/manage-learning-plan/delete/(:any)'] = 'maintenance';
+
+
+
+
+
+
+
+
