@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 //$config['base_url'] = defined('BASE_URL') ? BASE_URL : '';
-$config['base_url'] = 'http://localhost/lms-test2/';
+$config['base_url'] = 'http://localhost/lms-bulog/';
 
 /*
 |--------------------------------------------------------------------------

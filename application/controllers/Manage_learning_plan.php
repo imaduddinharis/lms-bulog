@@ -77,6 +77,14 @@ class Manage_learning_plan extends CI_Controller {
     public function add()
 	{
         /*- manage data throw -*/
+        $data['diklat']                 = json_decode($this->curl->simple_get($this->API.'diklat'));
+        $data['akademi']                = json_decode($this->curl->simple_get($this->API.'akademi'));
+        $data['performance_issue']      = json_decode($this->curl->simple_get($this->API.'performance_issue'));
+        $data['competence_issue']       = json_decode($this->curl->simple_get($this->API.'competence_issue'));
+        $data['strategic_innitiative']  = json_decode($this->curl->simple_get($this->API.'strategic_innitiative'));
+        $data['business_issue']         = json_decode($this->curl->simple_get($this->API.'business_issue'));
+        $data['tempat']                 = json_decode($this->curl->simple_get($this->API.'tempat'));
+        
         
         /*- define reference assets -*/
         $data['assets']=$this->assets;
@@ -92,4 +100,34 @@ class Manage_learning_plan extends CI_Controller {
         
 		$this->load->view('template/index',$data);
 	}
+    public function post(){
+        if(isset($_POST['submit'])){
+            $data = array(
+                'kode_lp'           =>  $this->input->post('kode_lp'),
+                'kode_diklat'       =>  $this->input->post('diklat'),
+                'kode_akademi'      =>  $this->input->post('akademi'),
+                'kode_pi'           =>  $this->input->post('performance_issue'),
+                'kode_si'           =>  $this->input->post('strategic_innitiative'),
+                'kode_bi'           =>  $this->input->post('business_issue'),
+                'kode_ci'           =>  $this->input->post('competence_issue'),
+                'tgl_mulai'         =>  $this->input->post('tgl_mulai'),
+                'tgl_selesai'       =>  $this->input->post('tgl_selesai'),
+                'tahun'             =>  $this->input->post('tahun'),
+                'tempat'            =>  $this->input->post('tempat'),
+                'total_anggaran'    =>  $this->input->post('total_anggaran'));
+            $insert =  $this->curl->simple_post($this->API.'/learning_plan', $data, array(CURLOPT_BUFFERSIZE => 10)); 
+            if($insert)
+            {
+//                $this->session->set_flashdata('hasil','Insert Data Berhasil');
+                redirect(base_url().'/learning-management/manage-learning-plan');
+            }else
+            {
+//               $this->session->set_flashdata('hasil','Insert Data Gagal');
+                echo'<script>alert("Gagal menambahkan learning plan'.error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE).'");
+                window.location="'.site_url().'/learning-management/manage-learning-plan/add";
+                </script>';
+            }
+//            redirect('mahasiswa');
+        }
+    }
 }

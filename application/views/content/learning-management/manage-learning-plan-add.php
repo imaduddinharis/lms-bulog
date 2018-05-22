@@ -10,8 +10,8 @@
                                             
                                             <div class="card">
                                                     <div class="card-header">
-                                                        <h5>Basic Form Inputs</h5>
-                                                        <span>Add class of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>
+                                                        <h5>Add New Learning Plan</h5>
+<!--                                                        <span>Add class of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>-->
                                                         <div class="card-header-right"><i
                                                             class="icofont icofont-spinner-alt-5"></i></div>
 
@@ -21,286 +21,148 @@
 
                                                         </div>
                                                         <div class="card-block">
-                                                            <h4 class="sub-title">Basic Inputs</h4>
-                                                            <form>
+<!--                                                            <h4 class="sub-title">Basic Inputs</h4>-->
+                                                            <form method="post" action="<?=base_url()?>add-learning-plan">
                                                                 <div class="form-group row">
-                                                                    <label class="col-sm-2 col-form-label">Simple Input</label>
+                                                                    <label class="col-sm-2 col-form-label">Kode LP</label>
                                                                     <div class="col-sm-10">
-                                                                        <input type="text" class="form-control">
+                                                                        <input type="text" class="form-control" placeholder="masukkan kode learning plan" name="kode_lp">
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group row">
-                                                                    <label class="col-sm-2 col-form-label">Placeholder</label>
-                                                                    <div class="col-sm-10">
-                                                                        <input type="text" class="form-control"
-                                                                        placeholder="Type your title in Placeholder">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row">
-                                                                    <label class="col-sm-2 col-form-label">Password</label>
-                                                                    <div class="col-sm-10">
-                                                                        <input type="password" class="form-control"
-                                                                        placeholder="Password input">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row">
-                                                                    <label class="col-sm-2 col-form-label">Read only</label>
-                                                                    <div class="col-sm-10">
-                                                                        <input type="text" class="form-control"
-                                                                        placeholder="You can't change me" readonly>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row">
-                                                                    <label class="col-sm-2 col-form-label">Disable Input</label>
-                                                                    <div class="col-sm-10">
-                                                                        <input type="text" class="form-control"
-                                                                        placeholder="Disabled text" disabled>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row">
-                                                                    <label class="col-sm-2 col-form-label">Predefine
-                                                                        Input</label>
+                                                                        <label class="col-sm-2 col-form-label">Pilih Diklat</label>
                                                                         <div class="col-sm-10">
-                                                                            <input type="text" class="form-control"
-                                                                            value="Enter yout content after me">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="form-group row">
-                                                                        <label class="col-sm-2 col-form-label">Select Box</label>
-                                                                        <div class="col-sm-10">
-                                                                            <select name="select" class="form-control">
-                                                                                <option value="opt1">Select One Value Only</option>
-                                                                                <option value="opt2">Type 2</option>
-                                                                                <option value="opt3">Type 3</option>
-                                                                                <option value="opt4">Type 4</option>
-                                                                                <option value="opt5">Type 5</option>
-                                                                                <option value="opt6">Type 6</option>
-                                                                                <option value="opt7">Type 7</option>
-                                                                                <option value="opt8">Type 8</option>
+                                                                            <select name="diklat" class="form-control">
+                                                                                <option value="">------ pilih diklat ------</option>
+                                                                                <?php
+                                                                                foreach ($diklat->result as $dl){
+                                                                                    echo'
+                                                                                <option value="'.$dl->kode_diklat.'">'.$dl->nama_diklat.'</option>';
+                                                                                }
+                                                                                ?>
                                                                             </select>
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="form-group row">
-                                                                        <label class="col-sm-2 col-form-label">Round Input</label>
+                                                                </div>
+                                                                <div class="form-group row">
+                                                                        <label class="col-sm-2 col-form-label">Pilih Akademi</label>
                                                                         <div class="col-sm-10">
-                                                                            <input type="text"
-                                                                            class="form-control form-control-round"
-                                                                            placeholder=".form-control-round">
+                                                                            <select name="akademi" class="form-control">
+                                                                                <option value="">------ pilih akademi ------</option>
+                                                                                <?php
+                                                                                foreach ($akademi->result as $al){
+                                                                                    echo'
+                                                                                <option value="'.$al->kode_akademi.'">'.$al->nama_akademi.'</option>';
+                                                                                }
+                                                                                ?>
+                                                                            </select>
                                                                         </div>
+                                                                </div>
+                                                                <div class="form-group row">
+                                                                        <label class="col-sm-2 col-form-label">Pilih Performance Issue</label>
+                                                                        <div class="col-sm-10">
+                                                                            <select name="performance_issue" class="form-control">
+                                                                                <option value="">------ pilih performance issue ------</option>
+                                                                                <?php
+                                                                                foreach ($performance_issue->result as $pil){
+                                                                                    echo'
+                                                                                <option value="'.$pil->kode_pi.'">'.$pil->nama.'</option>';
+                                                                                }
+                                                                                ?>
+                                                                            </select>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="form-group row">
+                                                                        <label class="col-sm-2 col-form-label">Pilih Strategic Innitiative</label>
+                                                                        <div class="col-sm-10">
+                                                                            <select name="strategic_innitiative" class="form-control">
+                                                                                <option value="">------ pilih strategic innitiative ------</option>
+                                                                                <?php
+                                                                                foreach ($strategic_innitiative->result as $sil){
+                                                                                    echo'
+                                                                                <option value="'.$sil->kode_si.'">'.$sil->nama.'</option>';
+                                                                                }
+                                                                                ?>
+                                                                            </select>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="form-group row">
+                                                                        <label class="col-sm-2 col-form-label">Pilih Business Issue</label>
+                                                                        <div class="col-sm-10">
+                                                                            <select name="business_issue" class="form-control">
+                                                                                <option value="">------ pilih business issue ------</option>
+                                                                                <?php
+                                                                                foreach ($business_issue->result as $bil){
+                                                                                    echo'
+                                                                                <option value="'.$bil->kode_bi.'">'.$bil->nama.'</option>';
+                                                                                }
+                                                                                ?>
+                                                                            </select>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="form-group row">
+                                                                        <label class="col-sm-2 col-form-label">Pilih Competence Issue</label>
+                                                                        <div class="col-sm-10">
+                                                                            <select name="competence_issue" class="form-control">
+                                                                                <option value="">------ pilih competence issue ------</option>
+                                                                                <?php
+                                                                                foreach ($competence_issue->result as $cil){
+                                                                                    echo'
+                                                                                <option value="'.$cil->kode_ci.'">'.$cil->divisi.' ( '.$cil->level.' )</option>';
+                                                                                }
+                                                                                ?>
+                                                                            </select>
+                                                                        </div>
+                                                                </div>
+                                                                
+                                                                <div class="form-group row">
+                                                                    <label class="col-sm-2 col-form-label">Tanggal Mulai</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="date" class="form-control" name="tgl_mulai">
                                                                     </div>
-                                                                    <div class="form-group row">
-                                                                        <label class="col-sm-2 col-form-label">Maximum
-                                                                            Length</label>
-                                                                            <div class="col-sm-10">
-                                                                                <input type="text" class="form-control"
-                                                                                placeholder="Content must be in 6 characters"
-                                                                                maxlength="6">
-                                                                            </div>
+                                                                </div>
+                                                                
+                                                                <div class="form-group row">
+                                                                    <label class="col-sm-2 col-form-label">Tanggal Selesai</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="date" class="form-control" name="tgl_selesai">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group row">
+                                                                    <label class="col-sm-2 col-form-label">Tahun</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control" name="tahun">
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                                <div class="form-group row">
+                                                                        <label class="col-sm-2 col-form-label">Pilih Tempat</label>
+                                                                        <div class="col-sm-10">
+                                                                            <select name="tempat" class="form-control">
+                                                                                <option value="">------ pilih tempat ------</option>
+                                                                                <?php
+                                                                                foreach ($tempat->result as $tl){
+                                                                                    echo'
+                                                                                <option value="'.$tl->id_tempat.'">'.$tl->nama_tempat.'</option>';
+                                                                                }
+                                                                                ?>
+                                                                            </select>
                                                                         </div>
-                                                                        <div class="form-group row">
-                                                                            <label class="col-sm-2 col-form-label">Disable
-                                                                                Autocomplete</label>
-                                                                                <div class="col-sm-10">
-                                                                                    <input type="text" class="form-control"
-                                                                                    placeholder="Autocomplete Off"
-                                                                                    autocomplete="off">
-                                                                                </div>
+                                                                </div>
+                                                                <div class="form-group row">
+                                                                    <label class="col-sm-2 col-form-label">Total Anggaran</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control" id="total_anggaran" name="total_anggaran">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group row">
+                                                                    <div class="col-sm-10">
+                                                                        <button onclick="checkNumber()" name="submit" type="submit" class="btn btn-primary">Add Learning Plan</button>
+                                                                    </div>
+                                                                </div>
+                                                                </form>
                                                                             </div>
-                                                                            <div class="form-group row">
-                                                                                <label class="col-sm-2 col-form-label">Static Text</label>
-                                                                                <div class="col-sm-10">
-                                                                                    <div class="form-control-static">Hello !... This is
-                                                                                        static text
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-group row">
-                                                                                <label class="col-sm-2 col-form-label">Color</label>
-                                                                                <div class="col-sm-10">
-                                                                                    <input type="color" class="form-control">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-group row">
-                                                                                <label class="col-sm-2 col-form-label">Upload File</label>
-                                                                                <div class="col-sm-10">
-                                                                                    <input type="file" class="form-control">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-group row">
-                                                                                <label class="col-sm-2 col-form-label">Textarea</label>
-                                                                                <div class="col-sm-10">
-                                                                                    <textarea rows="5" cols="5" class="form-control"
-                                                                                    placeholder="Default textarea"></textarea>
-                                                                                </div>
-                                                                            </div>
-                                                                        </form>
-                                                                        <div class="row">
-                                                                            <div class="col-sm-6">
-                                                                                <h4 class="sub-title">Input Sizes</h4>
-                                                                                <form>
-                                                                                    <div class="form-group row">
-                                                                                        <div class="col-sm-12">
-                                                                                            <input type="text"
-                                                                                            class="form-control form-control-lg"
-                                                                                            placeholder=".form-control-lg">
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="form-group row">
-                                                                                        <div class="col-sm-10">
-                                                                                            <input type="text" class="form-control"
-                                                                                            placeholder=".form-control">
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="form-group row">
-                                                                                        <div class="col-sm-8">
-                                                                                            <input type="text"
-                                                                                            class="form-control form-control-sm"
-                                                                                            placeholder=".form-control-sm">
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </form>
-                                                                            </div>
-                                                                            <div class="col-sm-6 mobile-inputs">
-                                                                                <h4 class="sub-title">Color Inputs</h4>
-                                                                                <form>
-                                                                                    <div class="form-group">
-                                                                                        <input type="text"
-                                                                                        class="form-control form-control-primary"
-                                                                                        placeholder=".form-control-primary">
-                                                                                    </div>
-                                                                                    <div class="form-group row">
-                                                                                        <div class="col-sm-6">
-                                                                                            <input type="text"
-                                                                                            class="form-control form-control-warning"
-                                                                                            placeholder=".form-control-warning">
-                                                                                        </div>
-                                                                                        <div class="col-sm-6">
-                                                                                            <input type="text"
-                                                                                            class="form-control form-control-default"
-                                                                                            placeholder=".form-control-default">
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="form-group row">
-                                                                                        <div class="col-sm-6">
-                                                                                            <input type="text"
-                                                                                            class="form-control form-control-danger"
-                                                                                            placeholder=".form-control-danger">
-                                                                                        </div>
-                                                                                        <div class="col-sm-6">
-                                                                                            <input type="text"
-                                                                                            class="form-control form-control-success"
-                                                                                            placeholder=".form-control-success">
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="form-group row">
-                                                                                        <div class="col-sm-6">
-                                                                                            <input type="text"
-                                                                                            class="form-control form-control-inverse"
-                                                                                            placeholder=".form-control-inverse">
-                                                                                        </div>
-                                                                                        <div class="col-sm-6">
-                                                                                            <input type="text"
-                                                                                            class="form-control form-control-info"
-                                                                                            placeholder=".form-control-info">
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </form>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="row">
-                                                                            <div class="col-sm-6 mobile-inputs">
-                                                                                <h4 class="sub-title">Text-color</h4>
-                                                                                <form>
-                                                                                    <div class="form-group">
-                                                                                        <input type="text"
-                                                                                        class="form-control form-txt-primary"
-                                                                                        placeholder=".form-txt-primary">
-                                                                                    </div>
-                                                                                    <div class="form-group row">
-                                                                                        <div class="col-sm-6">
-                                                                                            <input type="text"
-                                                                                            class="form-control form-txt-warning"
-                                                                                            placeholder=".form-txt-warning">
-                                                                                        </div>
-                                                                                        <div class="col-sm-6">
-                                                                                            <input type="text"
-                                                                                            class="form-control form-txt-default"
-                                                                                            placeholder=".form-txt-default">
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="form-group row">
-                                                                                        <div class="col-sm-6">
-                                                                                            <input type="text"
-                                                                                            class="form-control form-txt-danger"
-                                                                                            placeholder=".form-txt-danger">
-                                                                                        </div>
-                                                                                        <div class="col-sm-6">
-                                                                                            <input type="text"
-                                                                                            class="form-control form-txt-success"
-                                                                                            placeholder=".form-txt-success">
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="row">
-                                                                                        <div class="col-sm-6">
-                                                                                            <input type="text"
-                                                                                            class="form-control form-txt-inverse"
-                                                                                            placeholder=".form-txt-inverse">
-                                                                                        </div>
-                                                                                        <div class="col-sm-6">
-                                                                                            <input type="text"
-                                                                                            class="form-control form-txt-info"
-                                                                                            placeholder=".form-txt-info">
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </form>
-                                                                            </div>
-                                                                            <div class="col-sm-6 mobile-inputs">
-                                                                                <h4 class="sub-title">Background-color</h4>
-                                                                                <form>
-                                                                                    <div class="form-group">
-                                                                                        <input type="text"
-                                                                                        class="form-control form-bg-primary"
-                                                                                        placeholder=".form-bg-primary">
-                                                                                    </div>
-                                                                                    <div class="form-group row">
-                                                                                        <div class="col-sm-6">
-                                                                                            <input type="text"
-                                                                                            class="form-control form-bg-warning"
-                                                                                            placeholder=".form-bg-warning">
-                                                                                        </div>
-                                                                                        <div class="col-sm-6">
-                                                                                            <input type="text"
-                                                                                            class="form-control form-bg-default"
-                                                                                            placeholder=".form-bg-default">
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="form-group row">
-                                                                                        <div class="col-sm-6">
-                                                                                            <input type="text"
-                                                                                            class="form-control form-bg-danger"
-                                                                                            placeholder=".form-bg-danger">
-                                                                                        </div>
-                                                                                        <div class="col-sm-6">
-                                                                                            <input type="text"
-                                                                                            class="form-control form-bg-success"
-                                                                                            placeholder=".form-bg-success">
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="row">
-                                                                                        <div class="col-sm-6">
-                                                                                            <input type="text"
-                                                                                            class="form-control form-bg-inverse"
-                                                                                            placeholder=".form-bg-inverse">
-                                                                                        </div>
-                                                                                        <div class="col-sm-6">
-                                                                                            <input type="text"
-                                                                                            class="form-control form-bg-info"
-                                                                                            placeholder=".form-bg-info">
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </form>
-                                                                            </div>
-                                                                        </div>
+                                                                            
+                                                                        
                                                                     </div>
                                                                 </div>
                                             

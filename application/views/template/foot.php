@@ -83,6 +83,14 @@ var nav = $('.fixed-button');
      }
  });
 </script>
+<script>
+    function checkNumber(){
+        var formInput = document.getElementById('total_anggaran').value;
+        if(isNaN(formInput) == true){
+            alert('total anggaran tidak valid');
+        }
+    }
+</script>
 </body>
 
 </html>
