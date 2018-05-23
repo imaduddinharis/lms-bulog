@@ -15,5 +15,10 @@ Specification & Requirement
 **************************
 Aplikasi ini menggunakan PHP Framework Codeigniter dengan library curl, untuk menjalankannya anda dapat mengaktifkan paket web server apache-mysql dengan syarat telah terinstal dan mengaktifkan library Curl pada pengaturan php.
 
+**************************
+Current Status
+**************************
+Learning Management : manage learning plan (done), manage diklat (done)
+
 `duds.hn <mailto:imaduddinhariss@gmail.com>`_
 
