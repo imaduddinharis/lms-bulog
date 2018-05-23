@@ -115,7 +115,7 @@ class Manage_learning_plan extends CI_Controller {
         
         /*- define reference assets -*/
         $data['assets']=$this->assets;
-        $data['title']= 'Add Learning Plan';
+        $data['title']= 'Update Learning Plan';
         
         /*- define reference section view -*/
 		$data['head']=$this->load->view('template/head',$data, true);
@@ -151,7 +151,7 @@ class Manage_learning_plan extends CI_Controller {
             {
 //               $this->session->set_flashdata('hasil','Insert Data Gagal');
                 echo'<script>alert("Gagal menambahkan learning plan'.error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE).'");
-                window.location="'.base_url().'/learning-management/manage-learning-plan/add";
+                window.location="'.base_url().'/learning-management/manage-learning-plan/add-learning-plan";
                 </script>';
             }
 //            redirect('mahasiswa');
