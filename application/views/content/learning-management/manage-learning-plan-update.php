@@ -10,7 +10,7 @@
                                             
                                             <div class="card">
                                                     <div class="card-header">
-                                                        <h5>Add New Learning Plan</h5>
+                                                        <h5>Update New Learning Plan</h5>
 <!--                                                        <span>Add class of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>-->
                                                         <div class="card-header-right"><i
                                                             class="icofont icofont-spinner-alt-5"></i></div>

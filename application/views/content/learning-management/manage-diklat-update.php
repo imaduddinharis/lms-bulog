@@ -28,7 +28,7 @@
                                                                 <div class="form-group row">
                                                                     <label class="col-sm-2 col-form-label">Kode Diklat</label>
                                                                     <div class="col-sm-10">
-                                                                        <input type="text" class="form-control" placeholder="masukkan kode diklat" name="kode_diklat" value="<?=$dl->kode_diklat?> " read-only>
+                                                                        <input type="text" class="form-control" placeholder="masukkan kode diklat" name="kode_diklat" value="<?=$dl->kode_diklat?>" readonly>
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group row">
