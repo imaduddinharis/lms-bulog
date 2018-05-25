@@ -86,6 +86,30 @@ $route['content-management'] = 'maintenance';
 $route['content-management/persiapan-pelatihan'] = 'maintenance';
 $route['content-management/evaluasi-pelatihan'] = 'maintenance';
 
+/* routes parameter */
+$route['business-issue'] = 'business_issue';
+$route['business-issue/add'] = 'maintenance';
+$route['business-issue/detail/(:any)'] = 'maintenance';
+$route['business-issue/update/(:any)'] = 'maintenance';
+
+$route['performance-issue'] = 'performance_issue';
+$route['performance-issue/add'] = 'maintenance';
+$route['performance-issue/detail/(:any)'] = 'maintenance';
+$route['performance-issue/update/(:any)'] = 'maintenance';
+
+$route['competence-issue'] = 'competence_issue';
+$route['competence-issue/add'] = 'maintenance';
+$route['competence-issue/detail/(:any)'] = 'maintenance';
+$route['competence-issuee/update/(:any)'] = 'maintenance';
+
+$route['strategic-innitiative'] = 'strategic_innitiative';
+$route['strategic-innitiative/add'] = 'maintenance';
+$route['strategic-innitiative/detail/(:any)'] = 'maintenance';
+$route['strategic-innitiative/update/(:any)'] = 'maintenance';
+
+
+
+
 /* routes action */
 $route['add-learning-plan'] = 'manage_learning_plan/post';
 $route['update-learning-plan'] = 'manage_learning_plan/put';
